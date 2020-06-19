@@ -332,7 +332,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
         constructable_config_compose = self.get_option('hostvar_expressions')
         constructable_config_groups = self.get_option('conditional_groups')
         constructable_config_keyed_groups = self.get_option('keyed_groups')
-        constructable_config_key_by_private_ip = boolean(self.get_option('key_by_private_ip'))
+        # constructable_config_key_by_private_ip = boolean(self.get_option('key_by_private_ip'))
 
         for h in self._hosts:
             ## ORIGINAL ##
@@ -340,7 +340,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
 
             ## MODIFIED ##
             inventory_hostname = self._get_private_ip(h)
-            
+
             if self._filter_host(inventory_hostname, h.hostvars):
                 continue
             self.inventory.add_host(inventory_hostname)
