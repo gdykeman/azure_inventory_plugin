@@ -553,7 +553,6 @@ class AzureHost(object):
             private_ipv4_addresses=[],
             id=self._vm_model['id'],
             location=self._vm_model['location'],
-            key_true=key_by_private_ip,
             name=self._vm_model['name'],
             powerstate=self._powerstate,
             provisioning_state=self._vm_model['properties']['provisioningState'].lower(),
